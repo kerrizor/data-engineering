@@ -11,7 +11,44 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130413185251) do
+ActiveRecord::Schema.define(:version => 20130413202717) do
+
+  create_table "customers", :force => true do |t|
+    t.string   "name",       :default => "", :null => false
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
+  end
+
+  create_table "items", :force => true do |t|
+    t.string   "description",                               :default => "", :null => false
+    t.decimal  "price",       :precision => 8, :scale => 2
+    t.datetime "created_at",                                                :null => false
+    t.datetime "updated_at",                                                :null => false
+  end
+
+  create_table "merchants", :force => true do |t|
+    t.string   "name",       :default => "", :null => false
+    t.string   "address",    :default => "", :null => false
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
+  end
+
+  create_table "purchases", :force => true do |t|
+    t.integer  "customer_id"
+    t.integer  "merchant_id"
+    t.integer  "item_quantity", :default => 0, :null => false
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
+  end
+
+  create_table "transactions", :force => true do |t|
+    t.integer  "customer_id"
+    t.integer  "merchant_id"
+    t.integer  "item_id"
+    t.integer  "item_quantity", :default => 0, :null => false
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "name",                   :default => "", :null => false
