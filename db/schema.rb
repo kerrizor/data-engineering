@@ -33,14 +33,6 @@ ActiveRecord::Schema.define(:version => 20130413202717) do
     t.datetime "updated_at",                 :null => false
   end
 
-  create_table "purchases", :force => true do |t|
-    t.integer  "customer_id"
-    t.integer  "merchant_id"
-    t.integer  "item_quantity", :default => 0, :null => false
-    t.datetime "created_at",                   :null => false
-    t.datetime "updated_at",                   :null => false
-  end
-
   create_table "transactions", :force => true do |t|
     t.integer  "customer_id"
     t.integer  "merchant_id"
