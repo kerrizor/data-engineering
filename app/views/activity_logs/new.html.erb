@@ -1,0 +1,9 @@
+
+<%= form_for @activity_log, html: { multipart: true } do |f| %>
+  <p>
+    <label>Upload your Activity Log</label><br>
+    <%= f.file_field :file %><br>
+
+    <%= f.submit %>
+  </p>
+<% end %>

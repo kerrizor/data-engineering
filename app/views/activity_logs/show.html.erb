@@ -1,0 +1,7 @@
+<div>
+  This Activity Log contained <%= @activity_log.transactions.count %> transactions, which totaled $<%= @activity_log.total %>
+</div><br>
+
+<div>
+  <%= link_to "Upload another?", new_activity_log_path %>
+</div>
