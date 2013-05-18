@@ -1,4 +1,5 @@
 class ActivityLogsController < ApplicationController
+  before_filter :authenticate_user!
   before_filter :check_for_file, only: [:create]
 
   def new
