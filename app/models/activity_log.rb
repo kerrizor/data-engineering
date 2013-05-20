@@ -5,6 +5,6 @@ class ActivityLog < ActiveRecord::Base
   mount_uploader :file, ActivityLogUploader
 
   def total
-    transactions.inject(0){ |sum,t| sum + t.total }
+    transactions.inject(0){ |sum, t| sum + t.total }
   end
 end

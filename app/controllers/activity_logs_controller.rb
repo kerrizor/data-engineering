@@ -26,7 +26,7 @@ class ActivityLogsController < ApplicationController
 
   private
   def check_for_file
-    unless params[:activity_log][:file]
+    unless params[:activity_log] && params[:activity_log][:file]
       flash[:error] = "Oops! Looks like you forgot to attach a file!"
       redirect_to action: 'new'
     end
